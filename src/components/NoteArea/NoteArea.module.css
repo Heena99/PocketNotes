@@ -1,0 +1,19 @@
+.main{
+    @apply sm:w-[75%] hidden h-screen bg-[#DAE5F5] sm:flex flex-col items-center justify-center relative
+}
+
+.mainSelected{
+    @apply sm:w-[75%] w-screen h-screen bg-[#DAE5F5]
+}
+
+.middle{
+    @apply h-[55%] w-[55%] flex flex-col items-center justify-center absolute
+}
+
+.heading{
+    @apply font-roboto text-black font-bold text-5xl
+}
+
+.text{
+    @apply font-roboto text-[#292929] font-medium text-xl mt-5
+}

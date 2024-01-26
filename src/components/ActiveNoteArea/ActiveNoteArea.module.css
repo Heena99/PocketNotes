@@ -1,0 +1,44 @@
+.main{
+    @apply w-full h-full relative
+}
+
+.header{
+    @apply w-full sm:h-20 h-[4.5rem] bg-[#001F8B] flex items-center
+}
+
+.back{
+    @apply h-full sm:hidden mx-3 flex items-center cursor-pointer
+}
+
+.icon
+{
+    @apply sm:size-14 size-12 text-white font-roboto font-medium bg-teal-950 rounded-[50%] flex items-center justify-center sm:ml-3 mr-3 shrink-0
+}
+
+.title{
+    @apply font-roboto font-medium sm:text-lg text-base text-white
+}
+
+.maintext{
+    @apply w-full flex flex-col items-center overflow-auto h-[70%] gap-4 p-4 
+}
+
+.noteItem{
+    @apply w-full bg-white shadow-lg p-3 font-roboto font-normal rounded-md relative pb-12
+}
+
+.date{
+    @apply font-roboto font-medium text-[#353535] absolute bottom-2 right-4
+}
+
+.footer{
+    @apply w-full h-44 bg-[#001F8B] absolute bottom-0
+}
+
+.inputtext{
+    @apply w-[95%] h-[80%] p-4 bg-white translate-x-1/2 translate-y-1/2 absolute bottom-1/2 right-1/2 rounded-lg pr-10 resize-none
+}
+
+.btn{
+    @apply fixed bottom-7 sm:right-8 right-6 size-7
+}

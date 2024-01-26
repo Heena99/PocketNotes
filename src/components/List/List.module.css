@@ -1,0 +1,36 @@
+.main{
+    @apply sm:w-[25%] w-screen h-screen pt-5 bg-white sm:flex flex-col sm:items-center relative
+}
+
+.mainSelected{
+    @apply sm:w-[25%] hidden w-screen h-screen pt-5 bg-white sm:flex flex-col sm:items-center relative
+}
+
+.heading{
+    @apply font-roboto text-black font-medium text-4xl sm:mt-10 sm:mb-14 my-5 ml-7 sm:ml-0
+}
+
+.list{
+    @apply h-full w-full flex flex-col overflow-auto
+}
+
+.listItem{
+    @apply flex gap-4 items-center hover:bg-[#2F2F2F] hover:bg-opacity-[17%] p-3 rounded-2xl cursor-pointer
+}
+
+.active{
+    @apply bg-[#2F2F2F] bg-opacity-[17%]
+}
+
+.icon
+{
+    @apply size-14 text-white font-roboto font-medium bg-teal-950 rounded-[50%] flex items-center justify-center sm:ml-6 ml-4 shrink-0
+}
+
+.title{
+    @apply font-roboto font-medium text-lg
+}
+
+.addbtn{
+    @apply absolute sm:bottom-9 bottom-7 right-7 size-16 rounded-[50%] bg-[#16008B] text-white font-roboto font-medium text-5xl flex items-center justify-center cursor-pointer
+}
