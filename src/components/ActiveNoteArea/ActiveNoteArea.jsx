@@ -9,6 +9,8 @@ const ActiveNoteArea = () => {
 
     const { activeNote, getInitial, setActiveNote, setNotes } = useContext(NotesContext)
 
+    const [scroll, setScroll] = useState(false);
+
     const [newNote, setNewNote] = useState("");
     const noteEndRef = useRef(null)
 
@@ -18,7 +20,7 @@ const ActiveNoteArea = () => {
     
       useEffect(() => {
         scrollToBottom()
-      }, [newNote]);
+      }, [scroll]);
 
     const goBack = () => {
         setActiveNote("");
@@ -41,7 +43,7 @@ const ActiveNoteArea = () => {
             })
         })
         setNewNote("");
-
+        setScroll((prev) => !prev)
     }
 
     return (
