@@ -20,7 +20,7 @@
 }
 
 .maintext{
-    @apply w-full flex flex-col items-center overflow-auto h-[70%] gap-4 p-4 
+    @apply w-full flex flex-col items-center overflow-auto sm:h-[70%] h-[65%] gap-4 p-4 
 }
 
 .noteItem{

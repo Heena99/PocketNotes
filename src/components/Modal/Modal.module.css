@@ -19,7 +19,11 @@
 }
 
 .input{
-    @apply border-[2px] border-[#CCCCCC] rounded-full sm:w-[70%] w-[60%] sm:h-10 h-7 sm:p-4
+    @apply border-[2px] border-[#CCCCCC] rounded-full sm:w-[70%] w-[60%] sm:h-10 h-7 sm:p-4 p-2
+}
+
+.error{
+    @apply text-xs text-[#FF0000]
 }
 
 .colordiv{
