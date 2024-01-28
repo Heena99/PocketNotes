@@ -15,7 +15,7 @@
 }
 
 .listItem{
-    @apply flex gap-4 items-center hover:bg-[#2F2F2F] hover:bg-opacity-[17%] p-3 rounded-2xl cursor-pointer
+    @apply flex gap-4 items-center hover:bg-[#2F2F2F] hover:bg-opacity-[10%] p-3 rounded-2xl cursor-pointer
 }
 
 .active{

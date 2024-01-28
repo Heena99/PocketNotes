@@ -30,6 +30,13 @@ const ActiveNoteArea = () => {
         setNewNote(e.target.value)
     }
 
+    const handleKeypress = event => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            addText();
+          }
+    };
+
     const addText = () => {
         setNotes((prev) => {
             return prev.map((item) => {
@@ -65,7 +72,7 @@ const ActiveNoteArea = () => {
                 <div ref={noteEndRef} />
             </main>
             <footer className={styles.footer}>
-                <textarea className={styles.inputtext} placeholder='Enter your text here...........' onChange={(e) => onType(e)} value={newNote}>
+                <textarea className={styles.inputtext} placeholder='Enter your text here...........' onChange={(e) => onType(e)} value={newNote} onKeyDown={handleKeypress}>
                 </textarea>
                 <button className={styles.btn}>{newNote ? <img src={enable} alt='enable' onClick={addText} /> : <img src={disable} alt='disable' />}</button>
             </footer>

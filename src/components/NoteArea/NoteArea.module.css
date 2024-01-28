@@ -3,7 +3,7 @@
 }
 
 .mainSelected{
-    @apply sm:w-[75%] w-screen h-screen bg-[#DAE5F5]
+    @apply sm:w-[75%] w-screen h-screen bg-[#DAE5F5] relative
 }
 
 .middle{
@@ -16,4 +16,12 @@
 
 .text{
     @apply font-roboto text-[#292929] font-medium text-xl mt-5
+}
+
+.encryption{
+    @apply font-roboto font-normal text-[#292929] text-base absolute bottom-5 right-1/2 translate-x-1/2
+}
+
+.bottom{
+    @apply flex gap-2
 }

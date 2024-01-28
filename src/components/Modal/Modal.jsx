@@ -23,6 +23,13 @@ const Modal = () => {
         }
     }
 
+    const handleKeypress = event => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            createGroup();
+          }
+    };
+
     if (!isVisible) return null;
     else return (
         <div className={styles.background} onClick={closeModal}>
@@ -31,7 +38,7 @@ const Modal = () => {
                 <div>
                     <div className={styles.inputdiv}>
                         <div className={styles.name}>Group Name</div>
-                        <input type="text" placeholder='Enter group name' className={styles.input} onChange={(e) => handleChange(e)} />
+                        <input type="text" placeholder='Enter group name' className={styles.input} onChange={(e) => handleChange(e)} onKeyDown={handleKeypress}/>
                     </div>
                     {error ? <div className={styles.error}>Group Name cannot be empty</div> : ""}
                 </div>
@@ -46,6 +53,7 @@ const Modal = () => {
                         })}
                     </div>
                 </div>
+
                 <div className={styles.button}>
                     <button className={styles.btn} onClick={createGroup}>Create</button>
                 </div>
