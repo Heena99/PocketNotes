@@ -37,8 +37,7 @@ const ActiveNoteArea = () => {
         }
     };
 
-    const addText = () => {
-
+    const dateFormat = () => {
         const months = [
             'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
         ]
@@ -64,12 +63,17 @@ const ActiveNoteArea = () => {
             " " +
             day;
 
+        return date;
+    }
+
+    const addText = () => {
+
         setNotes((prev) => {
             return prev.map((item) => {
                 if (item.title === activeNote.title) {
                     item.notes.push({
                         message: newNote,
-                        date: date
+                        date: dateFormat()
                     });
                 }
                 return item;
