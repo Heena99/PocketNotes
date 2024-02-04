@@ -28,7 +28,11 @@
 }
 
 .date{
-    @apply font-roboto font-medium text-[#353535] absolute bottom-2 right-4
+    @apply font-roboto font-medium text-[#353535] absolute bottom-2 right-4 flex items-center sm:text-base text-sm
+}
+
+.dot {
+    @apply block size-1 sm:size-[6px] rounded-full bg-black mx-3;
 }
 
 .footer{

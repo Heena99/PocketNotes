@@ -16,11 +16,11 @@ const ActiveNoteArea = () => {
 
     const scrollToBottom = () => {
         noteEndRef.current?.scrollIntoView({ behavior: "smooth" })
-      }
-    
-      useEffect(() => {
+    }
+
+    useEffect(() => {
         scrollToBottom()
-      }, [scroll]);
+    }, [scroll]);
 
     const goBack = () => {
         setActiveNote("");
@@ -34,16 +34,42 @@ const ActiveNoteArea = () => {
         if (event.key === 'Enter') {
             event.preventDefault();
             addText();
-          }
+        }
     };
 
     const addText = () => {
+
+        const months = [
+            'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+        ]
+        const d = new Date();
+        const day = Number(d.getHours()) > 11 ? "PM" : "AM";
+        let hour =
+            Number(d.getHours()) > 12
+                ? Number(d.getHours()) - 12
+                : Number(d.getHours());
+        hour = hour < 10 ? "0" + hour : hour;
+        const minute =
+            Number(d.getMinutes()) < 10 ? "0" + d.getMinutes() : d.getMinutes();
+        const date =
+            d.getDate() +
+            " " +
+            months[d.getMonth()] +
+            " " +
+            d.getFullYear() +
+            " | " +
+            hour +
+            ":" +
+            minute +
+            " " +
+            day;
+
         setNotes((prev) => {
             return prev.map((item) => {
-                if(item.title === activeNote.title){
+                if (item.title === activeNote.title) {
                     item.notes.push({
                         message: newNote,
-                        date: new Date().toLocaleString() + ""
+                        date: date
                     });
                 }
                 return item;
@@ -65,7 +91,11 @@ const ActiveNoteArea = () => {
                     return (
                         <div className={styles.noteItem} key={Math.random()}>
                             <div>{item.message}</div>
-                            <div className={styles.date}>{item.date}</div>
+                            <div className={styles.date}>
+                                <span>{item.date.split("|")[0]}</span>
+                                <span className={styles.dot}></span>
+                                <span>{item.date.split("|")[1]}</span>
+                            </div>
                         </div>
                     )
                 })}
